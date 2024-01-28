@@ -354,10 +354,7 @@ def to_sql(
     quotechar: Optional[str] = None,
     encoding: Optional[str] = None,
     work_directory: Optional[Path] = None,
-<<<<<<< HEAD
     collation: str = sql_collation,
-=======
->>>>>>> e68d564be5969bca04463b713c5ec449ea5eef6c
     trust_certificate: bool = False,
 ):
     """
