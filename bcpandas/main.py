@@ -358,6 +358,7 @@ def to_sql(
     work_directory: Optional[Path] = None,
     collation: str = sql_collation,
     identity_insert: bool = False,
+    trust_certificate: bool = False,
 ):
     """
     Writes the pandas DataFrame to a SQL table or view.
@@ -420,6 +421,8 @@ def to_sql(
         system-default for temporary files.
     identity_insert: bool, default False
         Specifies that identity value or values in the imported data file are to be used for the identity column.
+    trust_certificate: bool, default False
+        Optional flag to trust the SQL Server certificate. This is useful when connecting to Azure SQL Server.
 
     Notes
     -----
@@ -505,6 +508,7 @@ def to_sql(
             use_tablock=use_tablock,
             bcp_path=bcp_path,
             identity_insert=identity_insert,
+            trust_certificate=trust_certificate,
         )
     finally:
         if not debug:
